@@ -1,0 +1,13 @@
+.container {
+  background-color: rgba(42, 46, 55, 1);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.gender {
+  color: white;
+  font-family: Lato,sans-serif;
+  padding: 5px 20px;
+  text-transform: uppercase;
+}

@@ -4,6 +4,7 @@ import styles from './app.css';
 import Nav from '../nav/nav.js';
 import ProductPreview from '../product-preview/product-preview';
 import OptionGrid from '../option-grid/option-grid';
+import OptionRow from '../option-row/option-row';
 
 class App extends Component {
 

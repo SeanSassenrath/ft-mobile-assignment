@@ -1,0 +1,8 @@
+.container {
+  border: 1px solid rgba(105, 105, 105, .3);
+  min-width: 27%;
+  padding: 10px;
+  text-align: center;
+  color: rgba(236, 240, 241, 1);
+  background-color: rgba(38, 43, 49, 1);
+}

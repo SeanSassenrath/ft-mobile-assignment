@@ -13,8 +13,8 @@ class Nav extends Component {
           <span styleName="gender">Men</span>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default CSSModules(Nav, styles)
+export default CSSModules(Nav, styles);

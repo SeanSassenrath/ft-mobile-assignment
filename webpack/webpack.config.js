@@ -7,10 +7,10 @@ const nested = require('postcss-nested');
 const combineLoaders = require('webpack-combine-loaders');
 const path = require('path');
 
-module.exports = env => {
+module.exports = (env) => {
   return {
     entry: {
-      app: path.join(__dirname, '../src/'),
+      app: path.join(__dirname, '../src/index.jsx'),
       vendor: ['react', 'react-dom', 'react-router'],
     },
     /**
@@ -21,11 +21,10 @@ module.exports = env => {
       filename: '[name].[hash].js',
       path: path.join(__dirname, '../build/'),
     },
-
     module: {
       loaders: [
         {
-          test: /\.(js)$/,
+          test: /(\.jsx?)$|\.(js)$/,
           exclude: /node_modules/,
           loader: 'babel',
           query: {
@@ -33,13 +32,8 @@ module.exports = env => {
           },
         },
         {
-          test: /\.(js)$/,
-          exclude: /node_modules/,
-          loader: combineLoaders(['babel-loader', 'eslint-loader']),
-        },
-        {
           test: /\.css$/,
-          loader: combineLoaders([ //Combine style-loader and css-loader
+          loader: combineLoaders([ // Combine style-loader and css-loader
             {
               loader: 'style-loader'
             }, {
@@ -58,10 +52,7 @@ module.exports = env => {
         }
       ],
     },
-    postcss: function () { return [ autoprefixer, imports, nested, cssvariables ] },
-    eslint: {
-      configFile: './.eslintrc'
-    },
+    postcss() { return [autoprefixer, imports, nested, cssvariables]; },
     plugins: [
       // used to split out our sepcified vendor script
       new webpack.optimize.CommonsChunkPlugin({

@@ -13,6 +13,7 @@
     "axios": "^0.15.2",
     "css-loader": "^0.26.0",
     "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
     "mobx": "^2.6.3",
     "mobx-react": "^4.0.2",
     "postcss-css-variables": "^0.6.0",
@@ -22,7 +23,9 @@
     "react-css-modules": "^4.0.3",
     "react-dom": "^15.4.0",
     "react-router": "^3.0.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-combine-loaders": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -39,10 +42,7 @@
     "eslint-plugin-import": "^2.1.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
-    "html-webpack-plugin": "^2.24.1",
     "mobx-react-devtools": "^4.2.10",
-    "webpack": "^1.13.3",
-    "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-server": "^1.16.2"
   }
 }

@@ -2324,8 +2324,8 @@ html-comment-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
 html-minifier@^3.1.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.2.2.tgz#30d9fc4f22967bf056c68851e42a787bd45089a5"
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.2.3.tgz#d2ff536e24d95726c332493d8f77d84dbed85372"
   dependencies:
     camel-case "3.0.x"
     clean-css "3.4.x"

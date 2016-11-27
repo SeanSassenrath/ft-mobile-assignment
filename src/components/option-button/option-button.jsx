@@ -5,10 +5,10 @@ import styles from './option-button.css';
 class OptionButton extends Component {
   render() {
     return (
-      <div styleName='container'>
+      <div styleName="container">
         Test
       </div>
-    )
+    );
   }
 }
 

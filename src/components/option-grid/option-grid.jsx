@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import OptionButton from '../option-button/option-button.js';
 import CSSModules from 'react-css-modules';
+import OptionButton from '../option-button/option-button.jsx';
 import styles from './option-grid.css';
 
 class OptionGrid extends Component {
 
   render() {
     return (
-      <div styleName='test-container'>
+      <div styleName="test-container">
         <OptionButton>Test</OptionButton>
         <OptionButton>Test</OptionButton>
         <OptionButton>Test</OptionButton>
@@ -15,8 +15,8 @@ class OptionGrid extends Component {
         <OptionButton>Test</OptionButton>
         <OptionButton>Test</OptionButton>
       </div>
-    )
+    );
   }
 }
 
-export default CSSModules(OptionGrid, styles)
+export default CSSModules(OptionGrid, styles);

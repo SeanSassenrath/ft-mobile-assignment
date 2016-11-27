@@ -1,25 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { observable } from 'mobx';
-import axios from 'axios';
+// import { observable } from 'mobx';
+// import axios from 'axios';
 import App from './components/app/app.jsx';
-import { ItemObservable } from './observables/item-observable';
+import ItemsStore from './stores/items-store.js';
 
-const items = observable([]);
+const x = new ItemsStore();
 
-axios.get('http://fairthreads-api.herokuapp.com/admin/product-list', {
-  params: {
-    gender: 'womens',
-    category: 'dresses',
-    stylistPick: false
-  }
-}).then((res) => {
-  console.log('response', res);
-}).catch((error) => {
-  console.log(error);
-});
-
-
+/* eslint-disable no-undef */
 render(
   <App />,
   document.getElementById('app')

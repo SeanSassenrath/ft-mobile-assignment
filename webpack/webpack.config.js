@@ -33,6 +33,11 @@ module.exports = env => {
           },
         },
         {
+          test: /\.(js)$/,
+          exclude: /node_modules/,
+          loader: combineLoaders(['babel-loader', 'eslint-loader']),
+        },
+        {
           test: /\.css$/,
           loader: combineLoaders([ //Combine style-loader and css-loader
             {
@@ -54,6 +59,9 @@ module.exports = env => {
       ],
     },
     postcss: function () { return [ autoprefixer, imports, nested, cssvariables ] },
+    eslint: {
+      configFile: './.eslintrc'
+    },
     plugins: [
       // used to split out our sepcified vendor script
       new webpack.optimize.CommonsChunkPlugin({

@@ -27,21 +27,41 @@ export default class ItemsStore {
     return null;
   }
 
+  @computed get regularPrice() {
+    if (this.items.length > 1) {
+      return `$${this.items[0].price}`;
+    }
+    return null;
+  }
+
+  @computed get salePrice() {
+    if (this.items.length > 1) {
+      return this.items[0].salePrice;
+    }
+    return null;
+  }
+
+  @computed get brand() {
+    if (this.items.length > 1) {
+      return this.items[0].brand;
+    }
+    return null;
+  }
+
   @action getItems() {
-    console.log('this.gender', this.gender);
     axios.get('http://fairthreads-api.herokuapp.com/admin/product-list', {
       params: {
+        active: false,
         gender: this.gender,
-        category: this.category,
-        stylistPick: false
       }
     })
     .then((res) => {
       console.log('response', res);
       this.items = [];
-      return res.data.products;
+      return res.data;
     })
     .then((products) => {
+      console.log('products', products)
       products.forEach((product) => {
         this.items.push(new ItemStore(product));
       });

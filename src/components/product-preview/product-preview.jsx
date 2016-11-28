@@ -16,8 +16,7 @@ class ProductPreview extends Component {
     return (
       <div styleName="container">
         <div styleName="info-container">
-          <p styleName="info">Featured: 34</p>
-          <p styleName="info">Unassigned: 1,200</p>
+          <p styleName="info">{items.brand}</p>
         </div>
         <div styleName="product-container">
           <div styleName="product">
@@ -30,8 +29,8 @@ class ProductPreview extends Component {
           </div>
         </div>
         <div styleName="price-container">
-          <p styleName="info">Regular: $340</p>
-          <p styleName="info">Sale: $150</p>
+          <p styleName="info">{items.regularPrice}</p>
+          <p styleName="info">{items.salePrice}</p>
         </div>
       </div>
     );

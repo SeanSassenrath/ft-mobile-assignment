@@ -2,10 +2,13 @@ import { observable, action, computed } from 'mobx';
 
 export default class ItemStore {
   constructor(item) {
+    this.brand = item.brand;
     this.gender = item.gender;
     this.id = item._id;
     this.image = item.imageOriginal;
     this.objectFit = item.objectFit;
+    this.price = item.price;
+    this.salePrice = item.salePrice;
   }
 
   @observable gender = 'womens';

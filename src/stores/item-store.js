@@ -1,9 +1,11 @@
 import { observable, action, computed } from 'mobx';
 
-class ItemObservable {
+export default class ItemStore {
   constructor(item) {
     this.gender = item.gender;
-    this.id = item.id;
+    this.id = item._id;
+    this.image = item.imageOriginal;
+    this.objectFit = item.objectFit;
   }
 
   @observable gender = 'womens';
@@ -24,5 +26,3 @@ class ItemObservable {
   //   return item.saleprice;
   // }
 }
-
-export default ItemObservable;

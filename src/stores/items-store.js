@@ -5,45 +5,48 @@ import ItemStore from './item-store.js';
 export default class ItemsStore {
 
   @observable items = [];
+  @observable currentItem = 0;
   @observable gender = 'womens';
   @observable category = null;
   @observable loading = true;
 
   constructor() {
     this.getItems();
+    this.currentItem = 0;
   }
+
 
   @computed get productImage() {
     if (this.items.length > 1) {
-      return this.items[0].image;
+      return this.items[this.currentItem].image;
     }
     return null;
   }
 
   @computed get productObjectFit() {
     if (this.items.length > 1) {
-      return this.items[0].objectFit;
+      return this.items[this.currentItem].objectFit;
     }
     return null;
   }
 
   @computed get regularPrice() {
     if (this.items.length > 1) {
-      return `$${this.items[0].price}`;
+      return `$${this.items[this.currentItem].price}`;
     }
     return null;
   }
 
   @computed get salePrice() {
     if (this.items.length > 1) {
-      return this.items[0].salePrice;
+      return this.items[this.currentItem].salePrice;
     }
     return null;
   }
 
   @computed get brand() {
     if (this.items.length > 1) {
-      return this.items[0].brand;
+      return this.items[this.currentItem].brand;
     }
     return null;
   }
@@ -80,5 +83,18 @@ export default class ItemsStore {
   @action fetchByCategory(category) {
     this.category = category;
     this.getItems();
+  }
+
+  @action delete() {
+    axios({
+      method: 'PUT',
+      url: 'http://fairthreads-api.herokuapp.com/admin/product-lists/delete',
+      data: {
+        id: this.items[this.currentItem].id
+      }
+    }).then(action((res) => {
+      console.log('response', res);
+      this.currentItem = this.currentItem + 1;
+    }));
   }
 }

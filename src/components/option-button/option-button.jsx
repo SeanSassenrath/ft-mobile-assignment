@@ -10,7 +10,7 @@ class OptionButton extends Component {
 
   render() {
     return (
-      <div styleName="container">
+      <div styleName="container" {...this.props}>
         {this.props.children}
       </div>
     );

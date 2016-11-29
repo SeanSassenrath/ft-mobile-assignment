@@ -22,7 +22,7 @@ class App extends Component {
         <Devtools />
         <Nav items={items} />
         <ProductPreview items={items} />
-        <OptionGrid />
+        <OptionGrid items={items} />
       </div>
     );
   }

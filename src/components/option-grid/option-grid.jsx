@@ -17,10 +17,22 @@ class OptionGrid extends Component {
     return (
       <div>
         <OptionRow>
-          <OptionButton>Gender</OptionButton>
-          <OptionButton>ObjectFit</OptionButton>
-          <OptionButton>Featured</OptionButton>
+          <OptionButton onClick={() => items.setGender()}>Gender</OptionButton>
+          <OptionButton onClick={() => items.setObjectFit()}>ObjectFit</OptionButton>
+          <OptionButton onClick={() => items.setFeatured()}>Featured</OptionButton>
           <OptionButton onClick={() => items.delete()}>Delete</OptionButton>
+        </OptionRow>
+        <OptionRow>
+          <OptionButton onClick={() => items.save('underwear')}>Underwear</OptionButton>
+          <OptionButton onClick={() => items.save('athleisure')}>Athleisure</OptionButton>
+          <OptionButton onClick={() => items.save('shoes')}>Shoes</OptionButton>
+          <OptionButton onClick={() => items.save('tops')}>Tops</OptionButton>
+        </OptionRow>
+        <OptionRow>
+          <OptionButton>-</OptionButton>
+          <OptionButton>-</OptionButton>
+          <OptionButton onClick={() => items.save('dresses')}>{items.gender === 'womens' ? 'Dresses' : '-'}</OptionButton>
+          <OptionButton onClick={() => items.save('bottoms')}>Bottoms</OptionButton>
         </OptionRow>
       </div>
     );

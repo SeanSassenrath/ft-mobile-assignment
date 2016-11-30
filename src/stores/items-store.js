@@ -85,6 +85,57 @@ export default class ItemsStore {
     this.getItems();
   }
 
+  @action setGender() {
+    const item = this.items[this.currentItem];
+    if (item.gender === 'mens') {
+      item.gender = 'womens';
+    } else {
+      item.gender = 'mens';
+    }
+  }
+
+  @action setObjectFit() {
+    const item = this.items[this.currentItem];
+    if (item.objectFit === 'contain') {
+      item.objectFit = 'cover';
+    } else {
+      item.objectFit = 'contain';
+    }
+  }
+
+  @action setFeatured() {
+    const item = this.items[this.currentItem];
+    return !item.featured;
+  }
+
+  @action save(category) {
+    const item = this.items[this.currentItem];
+    const now = new Date();
+    item.active = true;
+    item.activeTimeStamp = now;
+    item.category = category;
+    console.log('item', item);
+    axios({
+      method: 'PUT',
+      url: 'http://fairthreads-api.herokuapp.com/admin/product-lists/edit',
+      data: {
+        data: {
+          active: item.active,
+          activeTimeStamp: item.activeTimeStamp,
+          category: item.category,
+          gender: item.gender,
+          id: item.id,
+          name: item.name,
+          objectFit: item.objectFit,
+          stylistPick: item.featured
+        }
+      }
+    }).then(action((res) => {
+      console.log('response', res);
+      this.currentItem = this.currentItem + 1;
+    }));
+  }
+
   @action delete() {
     axios({
       method: 'PUT',

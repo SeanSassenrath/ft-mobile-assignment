@@ -52,12 +52,7 @@ export default class ItemsStore {
   }
 
   @action getItems() {
-    axios.get('http://fairthreads-api.herokuapp.com/admin/product-list', {
-      params: {
-        active: false,
-        gender: this.gender,
-      }
-    })
+    axios.get(`http://fairthreads-api.herokuapp.com/admin/product-list/random/${this.gender}/false`)
     .then((res) => {
       console.log('response', res);
       this.items = [];

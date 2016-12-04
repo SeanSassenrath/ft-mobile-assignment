@@ -6,7 +6,8 @@
   "author": "SeanSassenrath <sean.sassenrath@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node webpack/webpack-dev-server"
+    "start": "node webpack/webpack-dev-server",
+    "build": "webpack --config ./webpack/webpack.prod.config.js --progress --colors"
   },
   "dependencies": {
     "autoprefixer": "^6.5.3",

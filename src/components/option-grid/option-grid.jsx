@@ -29,9 +29,9 @@ class OptionGrid extends Component {
           <OptionButton onClick={() => items.save('tops')}>Tops</OptionButton>
         </OptionRow>
         <OptionRow>
-          <OptionButton>-</OptionButton>
-          <OptionButton>-</OptionButton>
           <OptionButton onClick={() => items.save('dresses')}>{items.gender === 'womens' ? 'Dresses' : '-'}</OptionButton>
+          <OptionButton onClick={() => items.save('outerwear')}>Outerwear</OptionButton>
+          <OptionButton onClick={() => items.save('accessories')}>Accessories</OptionButton>
           <OptionButton onClick={() => items.save('bottoms')}>Bottoms</OptionButton>
         </OptionRow>
       </div>
